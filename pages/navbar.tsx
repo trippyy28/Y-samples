@@ -27,12 +27,15 @@ const Navbar: React.FC = () => {
         </h1>
       </div>
       <div className="flex justify-center items-center gap-4 mx-8 md:w-auto">
-        <h1 className="text-white flex gap-1">
+        <h1 className="text-white flex gap-1 cursor-pointer">
           <Image alt="account" src="/userIcon.svg" width={20} height={20} />
           Account
         </h1>
         <h1 className="text-white cursor-pointer">
-          <FontAwesomeIcon icon={faShoppingCart} className="mx-2" />
+          <FontAwesomeIcon
+            icon={faShoppingCart}
+            className="mx-2 cursor-pointer"
+          />
           Cart
         </h1>
       </div>
