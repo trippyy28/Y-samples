@@ -1,21 +1,27 @@
 import Image from "next/image";
+import Link from "next/link";
+import Store from "./store";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar: React.FC = () => {
   return (
-    <div className="flex flex-col md:flex-row md:justify-between w-full h-16 bg-[#000000]">
-      <div className="flex flex-col md:flex-row justify-between items-center mx-8 w-full md:w-auto">
-        <Image
-          style={{ position: "relative", top: "2px" }}
-          alt="logo"
-          src="/YsamplesLogo.png"
-          width={100}
-          height={100}
-        />
-        <h1 className="text-white cursor-pointer mb-2 md:mb-0 md:ml-4">
-          Store
-        </h1>
+    <div className="flex flex-col gap-16 md:flex-row sm:justify-center sm:w-full  h-16 bg-[#000000]">
+      <div className="flex flex-1 flex-col md:flex-row items-center w-full  md:right-0 md:w-auto">
+        <Link href="/">
+          <Image
+            style={{ position: "relative", top: "2px" }}
+            alt="logo"
+            src="/YsamplesLogo.png"
+            width={100}
+            height={100}
+          />
+        </Link>
+        <Link href="/store">
+          <h1 className="text-white cursor-pointer mb-2 md:mb-0 md:ml-4">
+            Store
+          </h1>
+        </Link>
         <h1 className="text-white cursor-pointer mb-2 md:mb-0 md:ml-4">
           Genres
         </h1>
@@ -26,7 +32,7 @@ const Navbar: React.FC = () => {
           About
         </h1>
       </div>
-      <div className="flex justify-center items-center gap-4 mx-8 md:w-auto">
+      <div className="flex flex-2 justify-center items-center gap-4 mx-8 md:w-auto">
         <h1 className="text-white flex gap-1 cursor-pointer">
           <Image alt="account" src="/userIcon.svg" width={20} height={20} />
           Account

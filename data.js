@@ -4,7 +4,7 @@ const samplePacks = [
     name: "Trap Essentials",
     description: "A collection of essential Trap sounds and loops.",
     image: "/image1.png",
-    price: 19.99,
+    price: 20,
     tags: ["Trap", "Drums", "Bass"],
   },
   {
@@ -12,7 +12,7 @@ const samplePacks = [
     name: "Hip Hop Loops",
     description: "A variety of Hip Hop loops for beatmakers and producers.",
     image: "/image2.png",
-    price: 14.99,
+    price: 15,
     tags: ["Hip Hop", "Loops", "Samples"],
   },
   {
@@ -20,7 +20,7 @@ const samplePacks = [
     name: "EDM Synths",
     description: "A collection of high-quality EDM synths and leads.",
     image: "/image3.png",
-    price: 24.99,
+    price: 25,
     tags: ["EDM", "Synths", "Leads"],
   },
   {
@@ -28,7 +28,7 @@ const samplePacks = [
     name: "The Minimal Era",
     description: "Minimal Era was Cool!",
     image: "/image4.png",
-    price: 24.99,
+    price: 25,
     tags: ["EDM", "Minimal", "Leads"],
   },
   // add more sample pack objects as needed
