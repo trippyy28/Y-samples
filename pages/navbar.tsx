@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Store from "./store";
+import Account from "./account";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
@@ -28,15 +29,19 @@ const Navbar: React.FC = () => {
         <h1 className="text-white cursor-pointer mb-2 md:mb-0 md:ml-4">
           Deals
         </h1>
-        <h1 className="text-white cursor-pointer mb-2 md:mb-0 md:ml-4">
-          About
-        </h1>
+        <Link href="/about">
+          <h1 className="text-white cursor-pointer mb-2 md:mb-0 md:ml-4">
+            About
+          </h1>
+        </Link>
       </div>
       <div className="flex flex-2 justify-center items-center gap-4 mx-8 md:w-auto">
-        <h1 className="text-white flex gap-1 cursor-pointer">
-          <Image alt="account" src="/userIcon.svg" width={20} height={20} />
-          Account
-        </h1>
+        <Link href="/account">
+          <h1 className="text-white flex gap-1 cursor-pointer">
+            <Image alt="account" src="/userIcon.svg" width={20} height={20} />
+            Account
+          </h1>
+        </Link>
         <h1 className="text-white cursor-pointer">
           <FontAwesomeIcon
             icon={faShoppingCart}

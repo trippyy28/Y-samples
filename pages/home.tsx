@@ -7,13 +7,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import samplePacks from "../data";
 import SamplePack from "./SamplePack";
+import { useUser } from "./context/UserContext";
 
 const HomePage: React.FC = () => {
   const data: SamplePack[] = samplePacks;
-
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [previousIndex, setPreviousIndex] = useState<number>(0);
-
+  const { user } = useUser();
   const goToPrevious = () => {
     setPreviousIndex(currentIndex);
     setCurrentIndex((prevIndex: number) =>
