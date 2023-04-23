@@ -23,12 +23,16 @@ const Navbar: React.FC = () => {
             Store
           </h1>
         </Link>
-        <h1 className="text-white cursor-pointer mb-2 md:mb-0 md:ml-4">
-          Genres
-        </h1>
-        <h1 className="text-white cursor-pointer mb-2 md:mb-0 md:ml-4">
-          Deals
-        </h1>
+        <Link href="/geners">
+          <h1 className="text-white cursor-pointer mb-2 md:mb-0 md:ml-4">
+            Genres
+          </h1>
+        </Link>
+        <Link href="/deals">
+          <h1 className="text-white cursor-pointer mb-2 md:mb-0 md:ml-4">
+            Deals
+          </h1>
+        </Link>
         <Link href="/about">
           <h1 className="text-white cursor-pointer mb-2 md:mb-0 md:ml-4">
             About
@@ -42,13 +46,15 @@ const Navbar: React.FC = () => {
             Account
           </h1>
         </Link>
-        <h1 className="text-white cursor-pointer">
-          <FontAwesomeIcon
-            icon={faShoppingCart}
-            className="mx-2 cursor-pointer"
-          />
-          Cart
-        </h1>
+        <Link href="/cart">
+          <h1 className="text-white cursor-pointer">
+            <FontAwesomeIcon
+              icon={faShoppingCart}
+              className="mx-2 cursor-pointer"
+            />
+            Cart
+          </h1>
+        </Link>
       </div>
     </div>
   );

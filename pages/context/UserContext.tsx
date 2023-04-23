@@ -1,10 +1,12 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { User } from "@supabase/supabase-js";
+import { AuthChangeEvent, Session } from "@supabase/supabase-js";
+
 import supabase from "@/config/supabaseClient";
 
 type UserContextValue = {
-  user: User | null;
-  setUser: React.Dispatch<React.SetStateAction<User | null>>;
+  userLogged: User | null;
+  setUserLogged: React.Dispatch<React.SetStateAction<User | null>>;
 };
 
 const UserContext = createContext<UserContextValue | undefined>(undefined);
@@ -24,12 +26,12 @@ type UserProviderProps = {
 };
 
 export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
-  const [user, setUser] = useState<User | null>(null);
+  const [userLogged, setUserLogged] = useState<User | null>(null);
 
   useEffect(() => {
     const unsubscribe = supabase.auth.onAuthStateChange(
       (event: AuthChangeEvent, session: Session | null) => {
-        setUser(session?.user || null);
+        setUserLogged(session?.user || null);
       }
     );
 
@@ -41,7 +43,7 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ user, setUser }}>
+    <UserContext.Provider value={{ userLogged, setUserLogged }}>
       {children}
     </UserContext.Provider>
   );

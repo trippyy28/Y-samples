@@ -7,7 +7,7 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const { user } = useUser();
+  const { userLogged } = useUser();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,8 +22,6 @@ const Login: React.FC = () => {
       if (error) {
         throw error;
       }
-
-      setUser(user);
     } catch (error) {
       if (error instanceof Error) {
         setError(error.message);
@@ -35,10 +33,10 @@ const Login: React.FC = () => {
     }
   };
 
-  if (user) {
+  if (userLogged) {
     return (
       <div>
-        <h1>Welcome back, {user.email}!</h1>
+        <h1>Welcome back, {userLogged.email}!</h1>
       </div>
     );
   }

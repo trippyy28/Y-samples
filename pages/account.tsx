@@ -5,19 +5,22 @@ import { AuthChangeEvent, Session, User } from "@supabase/supabase-js";
 
 import supabase from "@/config/supabaseClient";
 const Account: React.FC = () => {
-  const { user } = useUser();
+  const { userLogged } = useUser();
 
   function logOutUser() {
     supabase.auth.signOut();
   }
 
-  console.log("hi", user);
-
-  if (user) {
+  if (userLogged) {
     return (
-      <div>
-        <h1>Welcome back, {user.email}!</h1>
-        <button onClick={() => logOutUser()}>Log Out</button>
+      <div className="text-center relative top-10">
+        <h1>Welcome back, {userLogged.email}!</h1>
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          onClick={() => logOutUser()}
+        >
+          Log Out
+        </button>
       </div>
     );
   }
