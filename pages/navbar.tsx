@@ -28,9 +28,9 @@ const Navbar: React.FC = () => {
             Genres
           </h1>
         </Link>
-        <Link href="/deals">
+        <Link href="/blog">
           <h1 className="text-white cursor-pointer mb-2 md:mb-0 md:ml-4">
-            Deals
+            Blog
           </h1>
         </Link>
         <Link href="/about">
