@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {products} from "../data/products";
 import SamplePack from "./SamplePack";
 import Image from "next/image";
@@ -16,6 +17,9 @@ const Store: React.FC = () => {
           />
           <h3 className="mt-2 text-black text-center">{samplePack.title}</h3>
           <h3 className="mt-2 text-black text-center">{samplePack.price}$</h3>
+          <Link href={`/products/${samplePack.id}`}>
+            <h1 className="text-blue-500 cursor-pointer">View</h1>
+          </Link>
         </div>
       ))}
     </div>
