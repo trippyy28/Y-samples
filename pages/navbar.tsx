@@ -23,11 +23,11 @@ const Navbar: React.FC = () => {
             Store
           </h1>
         </Link>
-        <Link href="/geners">
+        {/* <Link href="/geners">
           <h1 className="text-white cursor-pointer mb-2 md:mb-0 md:ml-4">
             Genres
           </h1>
-        </Link>
+        </Link> */}
         <Link href="/blog">
           <h1 className="text-white cursor-pointer mb-2 md:mb-0 md:ml-4">
             Blog

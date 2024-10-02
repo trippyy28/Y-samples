@@ -42,12 +42,13 @@ const Login: React.FC = () => {
   }
 
   return (
-    <div>
-      <h1>Login</h1>
+    <div className ="flex justify-center flex-col items-center">
+      <h1 className="mg-5 bg-cyan-400">Login</h1>
       <form onSubmit={handleLogin}>
         <div>
           <label htmlFor="email">Email:</label>
           <input
+          className="bg-gray-200" 
             type="email"
             id="email"
             value={email}
@@ -57,13 +58,14 @@ const Login: React.FC = () => {
         <div>
           <label htmlFor="password">Password:</label>
           <input
+          className="bg-gray-200"
             type="password"
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type="submit" disabled={loading}>
+        <button type="submit" disabled={loading} className="bg-blue-300 flex justify-center">
           {loading ? "Loading..." : "Login"}
         </button>
       </form>

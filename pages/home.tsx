@@ -5,12 +5,12 @@ import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
-import samplePacks from "../data";
+import {products} from "../data/products";
 import SamplePack from "./SamplePack";
 import { useUser } from "./context/UserContext";
 
 const HomePage: React.FC = () => {
-  const data: SamplePack[] = samplePacks;
+  const data: SamplePack[] = products;
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [previousIndex, setPreviousIndex] = useState<number>(0);
   const { user } = useUser();
@@ -55,7 +55,7 @@ const HomePage: React.FC = () => {
             height={400}
             alt="carousel image"
           />
-          <h3 className="mt-2 text-black text-center">{samplePack.name}</h3>
+          <h3 className="mt-2 text-black text-center">{samplePack.title}</h3>
           <h3 className="mt-2 text-black text-center">{samplePack.price}$</h3>
         </div>
       ))}

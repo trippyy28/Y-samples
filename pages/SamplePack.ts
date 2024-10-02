@@ -1,8 +1,9 @@
-interface SamplePack {
+export interface SamplePack {
   id: number;
-  name: string;
   image: string;
   price: number;
+  title: string;
+  content: string;
 }
 
 export default SamplePack;

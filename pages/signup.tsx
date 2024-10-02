@@ -6,7 +6,7 @@ const Signup: React.FC = () => {
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const { user } = useUser();
+  const { userLogged } = useUser();
 
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,17 +36,17 @@ const Signup: React.FC = () => {
     }
   };
 
-  if (user) {
+  if (userLogged) {
     return (
       <div>
-        <h1>Welcome, {user.email}!</h1>
+        <h1>Welcome, {userLogged.email}!</h1>
       </div>
     );
   }
 
   return (
-    <div>
-      <h1>Signup</h1>
+    <div className="flex justify-center items-center flex-col">
+      <h1 className="mg-5 bg-cyan-400">Signup</h1>
       <form onSubmit={handleSignup}>
         <div>
           <label htmlFor="email">Email:</label>
@@ -55,6 +55,7 @@ const Signup: React.FC = () => {
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            className="bg-gray-200"
           />
         </div>
         <div>
@@ -67,7 +68,7 @@ const Signup: React.FC = () => {
           />
         </div>
         {error && <p>{error}</p>}
-        <button type="submit" disabled={loading}>
+        <button type="submit" disabled={loading} className="bg-blue-300">
           {loading ? "Loading..." : "Sign Up"}
         </button>
       </form>
