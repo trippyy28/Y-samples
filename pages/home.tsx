@@ -7,7 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import {products} from "../data/products";
 import SamplePack from "./SamplePack";
-import { useUser } from "./context/UserContext";
+import { useUser } from "../context/UserContext";
 
 const HomePage: React.FC = () => {
   const data: SamplePack[] = products;

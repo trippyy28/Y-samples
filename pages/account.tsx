@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useUser } from "../pages/context/UserContext";
+import { useUser } from "../context/UserContext";
 import { useEffect, useState } from "react";
 import { AuthChangeEvent, Session, User } from "@supabase/supabase-js";
 

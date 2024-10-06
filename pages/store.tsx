@@ -1,27 +1,31 @@
-import Link from "next/link";
-import {products} from "../data/products";
-import SamplePack from "./SamplePack";
-import Image from "next/image";
+// pages/store.tsx
+import React from 'react';
+import { useCart } from '../context/CartContext';
+import {products} from '../data/products';
 
 const Store: React.FC = () => {
-  const data: SamplePack[] = products;
+  const { addToCart } = useCart();
+
   return (
-    <div className="flex justify-center gap-8 my-36">
-      {data.map((samplePack: SamplePack, index: number) => (
-        <div key={samplePack.id} id={`${index}`} className="">
-          <Image
-            alt="product"
-            src={samplePack.image}
-            width={200}
-            height={200}
-          />
-          <h3 className="mt-2 text-black text-center">{samplePack.title}</h3>
-          <h3 className="mt-2 text-black text-center">{samplePack.price}$</h3>
-          <Link href={`/products/${samplePack.id}`}>
-            <h1 className="text-blue-500 cursor-pointer">View</h1>
-          </Link>
-        </div>
-      ))}
+    <div className="flex justify-center flex-col items-center p-4">
+      <h1 className="text-3xl font-bold mb-8">Store</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {products.map((product) => (
+          <div key={product.id} className="border p-4 rounded-lg">
+            <img src={product.image} alt={product.title} className="w-full h-48 object-cover" />
+            <h2 className="text-xl font-bold">{product.title}</h2>
+            <p>{product.title}</p>
+            <p>{product.content}</p>
+            <p className="text-lg font-semibold">${product.price}</p>
+            <button
+              onClick={() => addToCart(product)}
+              className="mt-2 bg-blue-500 text-white py-2 px-4 rounded"
+            >
+              Add to Cart
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

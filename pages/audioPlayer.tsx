@@ -1,5 +1,5 @@
 import React from "react";
-import { useAudio } from "../pages/context/AudioContext";
+import { useAudio } from "../context/AudioContext";
 import { FaPlay } from "react-icons/fa";
 import { FaPause } from "react-icons/fa";
 import styles from "../styles/audioPlayer.module.css";
