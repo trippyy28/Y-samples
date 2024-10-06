@@ -29,15 +29,15 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
   const [userLogged, setUserLogged] = useState<User | null>(null);
 
   useEffect(() => {
-    const unsubscribe = supabase.auth.onAuthStateChange(
+    const { data: subscription } = supabase.auth.onAuthStateChange(
       (event: AuthChangeEvent, session: Session | null) => {
         setUserLogged(session?.user || null);
       }
     );
 
     return () => {
-      if (typeof unsubscribe === "function") {
-        unsubscribe();
+      if (typeof subscription?.unsubscribe === "function") {
+        subscription.unsubscribe();
       }
     };
   }, []);
