@@ -1,5 +1,5 @@
-import { createContext, useContext, useState, useEffect } from "react";
-import { User } from "@supabase/supabase-js";
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import  supabase  from '../config/supabaseClient'; // Adjust the import path as needed
 import { User, Session, AuthChangeEvent } from '@supabase/supabase-js'; // Ensure correct import
 
 type UserProviderProps = {
