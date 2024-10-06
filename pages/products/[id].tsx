@@ -14,7 +14,7 @@ const ProductPage: React.FC = () => {
 
   return (
     <div className='flex justify-center items-center m-5 flex-col'>
-      <h1 className="bg-green-500 font-bold">{product.title}</h1>
+      <h1 className="bg-green-500 font-bold">{product.name}</h1>
       <p>{product.content}</p>
       
     </div>

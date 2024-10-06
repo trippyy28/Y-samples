@@ -14,10 +14,12 @@ const Login: React.FC = () => {
     setLoading(true);
 
     try {
-      const { user, error } = await supabase.auth.signInWithPassword({
+      const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
       });
+
+      const user = data.user;
 
       if (error) {
         throw error;

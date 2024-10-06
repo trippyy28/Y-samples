@@ -35,7 +35,7 @@ const AudioPlayer: React.FC = () => {
 
   return (
     <div className={styles.audioPlayer}>
-      <audio ref={audioPlayer} src={audioUrl} preload="auto"></audio>
+      <audio ref={audioPlayer} src={audioUrl ?? undefined} preload="auto"></audio>
       <button onClick={togglePlayPause} className={styles.playPause}>
         {isPlaying ? <FaPause /> : <FaPlay className={styles.play} />}
       </button>

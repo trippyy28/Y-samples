@@ -12,13 +12,13 @@ const Store: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {products.map((product) => (
           <div key={product.id} className="border p-4 rounded-lg">
-            <img src={product.image} alt={product.title} className="w-full h-48 object-cover" />
-            <h2 className="text-xl font-bold">{product.title}</h2>
-            <p>{product.title}</p>
+            <img src={product.image} alt={product.name} className="w-full h-48 object-cover" />
+            <h2 className="text-xl font-bold">{product.name}</h2>
+            <p>{product.name}</p>
             <p>{product.content}</p>
             <p className="text-lg font-semibold">${product.price}</p>
             <button
-              onClick={() => addToCart(product)}
+              onClick={() => addToCart({ ...product, quantity: 1 })}
               className="mt-2 bg-blue-500 text-white py-2 px-4 rounded"
             >
               Add to Cart

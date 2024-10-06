@@ -15,9 +15,9 @@ const Cart: React.FC = () => {
           {cart.map((item) => (
             <li key={item.id} className="flex justify-between items-center mb-2">
               <div>
-                <h3 className="text-lg font-bold">{item.title}</h3>
+                <h3 className="text-lg font-bold">{item.name}</h3>
                 <p>Quantity: {item.quantity}</p>
-                <img src={item.image} alt={item.title} className="w-20 h-20 object-cover" />
+                <img src={item.image} alt={item.name} className="w-20 h-20 object-cover" />
               </div>
               <p className="text-lg font-semibold">${item.price}</p>
             </li>
