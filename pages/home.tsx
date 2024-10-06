@@ -6,7 +6,7 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 import {products} from "../data/products";
-import SamplePack from "./SamplePack";
+import SamplePack from "../interfaces/SamplePack";
 import { useUser } from "../context/UserContext";
 
 const HomePage: React.FC = () => {
