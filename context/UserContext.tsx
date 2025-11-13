@@ -8,7 +8,6 @@ type UserProviderProps = {
 
 interface UserContextValue {
   userLogged: User | null;
-  
   setUserLogged: React.Dispatch<React.SetStateAction<User | null>>;
 }
 
